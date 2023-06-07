@@ -20,6 +20,6 @@ class TestJSExport {
     @JsName("testCalc")
     fun `test calc`() {
         val function = JSFunction("function test(a, b, c) { return a + b + c }", "a", "b", "c")
-        assertEquals("12", JSExecutor.execute(function, 2, 4, 6))
+        assertEquals(12f, (JSExecutor.execute(function, 2, 4, 6)).toFloat())
     }
 }

@@ -47,6 +47,7 @@ kotlin {
                 implementation("org.graalvm.js:js:22.0.0")
                 implementation("org.graalvm.js:js-scriptengine:22.0.0")
                 implementation("com.google.code.gson:gson:2.10.1")
+                implementation("org.mozilla:rhino:1.7.14")
             }
         }
         val jvmTest by getting
