@@ -1,6 +1,9 @@
+import java.net.URI
+
 plugins {
     kotlin("multiplatform") version "1.8.21"
     kotlin("plugin.serialization") version "1.8.21"
+    `maven-publish`
 }
 
 group = "s.knyazev"
@@ -8,6 +11,19 @@ version = "1.0-SNAPSHOT"
 
 repositories {
     mavenCentral()
+}
+
+publishing {
+    repositories {
+        maven {
+            name = "GitHubPackages"
+            url = URI("https://maven.pkg.github.com/octocat/hello-world")
+            credentials {
+                username = System.getenv("GITHUB_ACTOR")
+                password = System.getenv("GITHUB_TOKEN")
+            }
+        }
+    }
 }
 
 kotlin {
