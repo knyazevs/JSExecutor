@@ -55,3 +55,6 @@ kotlin {
         val jsTest by getting
     }
 }
+
+tasks.named("jsBrowserProductionLibraryPrepare").configure { dependsOn("jsProductionExecutableCompileSync") }
+tasks.named("jsBrowserProductionWebpack").configure { dependsOn("jsProductionLibraryCompileSync") }
